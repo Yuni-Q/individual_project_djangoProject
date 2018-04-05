@@ -61,3 +61,6 @@ path('', views.index),
 ]
 ```
 
+5. 모델 클래스
+
+- mysite/elections/models.py
