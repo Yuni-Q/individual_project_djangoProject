@@ -64,3 +64,39 @@ path('', views.index),
 5. 모델 클래스
 
 - mysite/elections/models.py
+
+```python
+from django.db import models
+
+# Create your models here.
+class Candidate(models.Model)
+	name = models.CharField(max_length=10)
+	introduction = models.TextField()
+	area = models.CharField(max_length=15)
+	party_number = models.IntegerField(default=1)
+```
+
+6. 마이그래이션과 DB (SQLite3을 지원)
+
+- mysite/mysite/settings.py
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'elections'
+]
+```
+
+```bash
+$ python manage.py makemigrations
+```
+
+```bash
+$ python manage.py migrate
+```
+
